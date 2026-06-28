@@ -11,13 +11,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      {!listingSubmitted ? (
-        // 1. User creates the listing first
-        <CreateListing onListingComplete={() => setListingSubmitted(true)} />
-      ) : (
-        // 2. Aadhaar verification triggers second
-        <AadhaarLogin onVerified={() => router.push("/dashboard")} />
-      )}
+      <CreateListing />
     </div>
   );
 }
