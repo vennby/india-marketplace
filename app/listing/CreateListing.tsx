@@ -32,33 +32,41 @@ export default function CreateListing() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 space-y-4 max-w-md mx-auto">
-      <h2 className="text-xl font-bold">Sell Anything (India Marketplace)</h2>
-      <input
-        name="title"
-        placeholder="What are you selling?"
-        className="w-full p-2 border"
-        required
-      />
-      <select name="category" className="w-full p-2 border">
-        <option value="goods">Goods (Mobile, Bike, etc)</option>
-        <option value="real_estate">Real Estate (Rent/Sell)</option>
-        <option value="services">Services (Plumbing, Tuition)</option>
-      </select>
-      <input
-        name="price"
-        type="number"
-        placeholder="Price in ₹"
-        className="w-full p-2 border"
-        required
-      />
-      <button
-        type="submit"
-        disabled={loading}
-        className="bg-blue-600 text-white p-2 w-full"
-      >
-        {loading ? "Checking for Scams..." : "Post Listing"}
-      </button>
-    </form>
+    <>
+      <div className="rounded-lg shadow-md bg-white p-4">
+        <form
+          onSubmit={handleSubmit}
+          className="p-4 space-y-4 max-w-md mx-auto"
+        >
+          <h2 className="text-xl font-bold">What are you listing?</h2>
+          <select name="category" className="w-full p-2 border">
+            <option value="goods">Goods (Mobile, Bike, etc)</option>
+            <option value="real_estate">Real Estate (Rent/Sell)</option>
+            <option value="services">Services (Plumbing, Tuition)</option>
+          </select>
+          <h2 className="text-xl font-bold">What are you listing?</h2>
+          <input
+            name="title"
+            placeholder="What are you selling?"
+            className="w-full p-2 border"
+            required
+          />
+          <input
+            name="price"
+            type="number"
+            placeholder="Price in ₹"
+            className="w-full p-2 border"
+            required
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-blue-600 text-white p-2 w-full"
+          >
+            {loading ? "Checking for Scams..." : "Post Listing"}
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
