@@ -26,7 +26,7 @@ export default function CreateListing() {
       },
     };
 
-    const { error } = await supabase.from("maindatabase").insert([data]);
+    const { error } = await supabase.from("listings").insert([data]);
     if (!error) alert("Listing sent for AI verification!");
     setLoading(false);
   }
