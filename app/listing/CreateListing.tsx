@@ -1,3 +1,5 @@
+"use client";
+
 // components/CreateListing.tsx
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
